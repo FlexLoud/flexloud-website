@@ -1,13 +1,19 @@
 import { z } from "zod";
 
 const EnvSchema = z.object({
-  NODE_ENV: z.enum(["development", "test", "production"]).default("development"),
+  NODE_ENV: z
+    .enum(["development", "test", "production"])
+    .default("development"),
 
   NEXT_PUBLIC_SITE_NAME: z.string().default("FlexLoud"),
-  NEXT_PUBLIC_SITE_TAGLINE: z.string().default("Cloud • Data • AI — engineered for outcomes"),
+  NEXT_PUBLIC_SITE_TAGLINE: z
+    .string()
+    .default("Cloud • Data • CRM — engineered for outcomes"),
 
   // Observability / ops
-  LOG_LEVEL: z.enum(["fatal", "error", "warn", "info", "debug", "trace", "silent"]).default("info"),
+  LOG_LEVEL: z
+    .enum(["fatal", "error", "warn", "info", "debug", "trace", "silent"])
+    .default("info"),
   BUILD_SHA: z.string().optional(),
 
   // Lead webhook delivery
@@ -18,7 +24,7 @@ const EnvSchema = z.object({
   RATE_LIMIT_ENABLED: z.coerce.boolean().default(true),
   RATE_LIMIT_RPM: z.coerce.number().int().min(1).max(600).default(30),
 
-  PORT: z.coerce.number().optional()
+  PORT: z.coerce.number().optional(),
 });
 
 export const env = EnvSchema.parse({
@@ -31,5 +37,5 @@ export const env = EnvSchema.parse({
   WEBHOOK_TIMEOUT_MS: process.env.WEBHOOK_TIMEOUT_MS,
   RATE_LIMIT_ENABLED: process.env.RATE_LIMIT_ENABLED,
   RATE_LIMIT_RPM: process.env.RATE_LIMIT_RPM,
-  PORT: process.env.PORT
+  PORT: process.env.PORT,
 });

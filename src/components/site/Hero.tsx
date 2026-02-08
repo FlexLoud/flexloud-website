@@ -2,7 +2,7 @@ import { env } from "@/lib/env";
 
 export function Hero() {
   return (
-    <section className="py-16 md:py-24">
+    <section className="py-12 md:py-18">
       <div className="container max-w-6xl">
         <div className="grid gap-10 md:grid-cols-2 md:items-center">
           <div>
@@ -38,7 +38,7 @@ export function Hero() {
             </div>
           </div>
 
-          <div className="rounded-2xl border bg-gradient-to-b from-zinc-50 to-white p-8 shadow-sm">
+          {/* <div className="rounded-2xl border bg-gradient-to-b from-zinc-50 to-white p-8 shadow-sm">
             <div className="grid gap-6">
               <div>
                 <p className="text-sm font-medium text-zinc-700">What you get</p>
@@ -50,7 +50,7 @@ export function Hero() {
                 <li className="rounded-xl border bg-white p-4">Performance-first, accessible UI patterns</li>
               </ul>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </section>

@@ -13,6 +13,8 @@
     "@hookform/resolvers": "^3.10.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
+    "framer-motion": "^12.33.0",
+    "lucide-react": "^0.563.0",
     "next": "^15.1.6",
     "pino": "^9.6.0",
     "react": "^19.0.0",
