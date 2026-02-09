@@ -39,10 +39,10 @@ export function Navbar() {
         >
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <div className="flex items-center gap-2">
+            <div className="flex items-center gap-2" style={{ maxWidth: 200 }}>
               {/* <div className="h-8 w-8 rounded-xl bg-zinc-900" /> */}
               {/* i want to add my logo here */}
-              <img src="/images/logo2.png" alt="Logo" height={80} width={80} className=" rounded-xl" />
+              <img src="/images/logo.png" alt="Logo" className=" rounded-xl" />
 
             </div>
 
