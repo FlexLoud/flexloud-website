@@ -1,6 +1,6 @@
 export function CTA() {
   return (
-    <section className="py-16">
+    <section className="">
       <div className="container max-w-6xl">
         <div className="rounded-2xl border bg-zinc-900 p-10 text-white">
           <h2 className="text-3xl font-semibold tracking-tight">Ready to ship?</h2>

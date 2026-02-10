@@ -44,7 +44,7 @@ export function Features() {
   return (
     <section
       id="features"
-      className="  bg-gradient-to-b from-white to-zinc-50"
+    // className="  bg-gradient-to-b from-white to-zinc-50"
     >
       <div className="container max-w-6xl">
         {/* Heading */}

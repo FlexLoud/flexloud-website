@@ -1,7 +1,7 @@
 import { CTA } from "@/components/site/CTA";
 import { ContactForm } from "@/components/site/ContactForm";
 import { Features } from "@/components/site/Features";
-import { Hero } from "@/components/site/Hero";
+import { HeroV4 } from "@/components/site/Hero3";
 import { Pricing } from "@/components/site/Pricing";
 import { Services } from "@/components/site/Services";
 import { Testimonials } from "@/components/site/Testimonials";
@@ -9,11 +9,7 @@ import { Testimonials } from "@/components/site/Testimonials";
 export default function HomePage() {
   return (
     <main className="relative min-h-screen bg-white">
-      {/* soft background */}
-      <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <div className="absolute -top-24 left-1/2 h-[520px] w-[520px] -translate-x-1/2 rounded-full bg-gradient-to-tr from-indigo-200 via-sky-200 to-emerald-200 blur-3xl opacity-60" />
-        <div className="absolute top-[520px] right-[-120px] h-[420px] w-[420px] rounded-full bg-gradient-to-tr from-fuchsia-200 via-rose-200 to-amber-200 blur-3xl opacity-50" />
-      </div>
+
 
       {/* content */}
       <div className="relative">
@@ -21,8 +17,11 @@ export default function HomePage() {
 
 
         {/* Hero */}
-        <section className=" py-5 md:py-14" style={{ backgroundImage: "url('/images/banner.png')" }}>
-          <Hero />
+        <section className=" py-5 md:py-14" style={{ backgroundImage: "url('/images/banner.png')", backgroundPosition: '60% center' }}>
+          {/* <Hero /> */}
+          {/* <HeroAnimated /> */}
+          <HeroV4 />
+          {/* <HeroV5 /> */}
         </section>
 
         {/* Features */}
@@ -38,7 +37,7 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="rounded-3xl border border-zinc-200/70 bg-white/70 p-6 shadow-sm backdrop-blur md:p-10">
+            <div className="card-glass hover-glow">
               <Features />
             </div>
           </div>
@@ -65,7 +64,7 @@ export default function HomePage() {
                 Fast delivery • Clean code • Transparent pricing
               </div>
             </div>
-            <div className="rounded-3xl border border-zinc-200/70 bg-white/70 p-6 shadow-sm backdrop-blur md:p-10">
+            <div className="card-glass hover-glow">
 
               <Services />
             </div>
@@ -87,7 +86,9 @@ export default function HomePage() {
               </p>
             </div>
 
-            <Testimonials />
+            <div className="card-glass hover-glow">
+              <Testimonials />
+            </div>
           </div>
         </section>
 
@@ -113,7 +114,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="rounded-3xl border border-zinc-200/70 bg-white p-6 shadow-sm md:p-10">
+            <div className="card-glass hover-glow">
               <Pricing />
             </div>
           </div>
@@ -122,7 +123,7 @@ export default function HomePage() {
         {/* CTA */}
         <section className="py-5 md:py-14">
           <div className="container max-w-6xl">
-            <div className="rounded-3xl border border-zinc-200/70 bg-gradient-to-br from-zinc-900 to-zinc-800 p-8 text-white shadow-sm md:p-12">
+            <div className="card-glass hover-glow">
               <CTA />
             </div>
           </div>
@@ -140,9 +141,9 @@ export default function HomePage() {
               </p>
             </div>
 
-            {/* <div className="rounded-3xl border border-zinc-200/70 bg-white p-6 shadow-sm md:p-10"> */}
-            <ContactForm />
-            {/* </div> */}
+            <div >
+              <ContactForm />
+            </div>
           </div>
         </section>
 

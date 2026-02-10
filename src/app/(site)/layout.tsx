@@ -3,6 +3,7 @@ import { Navbar } from "@/components/site/Navbar";
 import { Toaster } from "@/components/ui/toaster";
 import { env } from "@/lib/env";
 import type { Metadata } from "next";
+import '../../style/theme.css';
 import "../globals.css";
 
 export const metadata: Metadata = {

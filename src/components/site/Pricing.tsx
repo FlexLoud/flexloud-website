@@ -178,7 +178,7 @@ export function Pricing() {
     "rounded-full px-3 py-2 text-sm font-medium transition-colors";
 
   return (
-    <section id="pricing" className="py-14 md:py-20 bg-gradient-to-b from-zinc-50 to-white">
+    <section id="pricing" >
       <div className="container max-w-6xl">
         {/* Header */}
         <div className="mb-8 md:mb-10 flex flex-col gap-4">

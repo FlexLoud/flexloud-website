@@ -37,20 +37,6 @@ export function Hero() {
               <span className="rounded-full border px-3 py-1">Cloud Run</span>
             </div>
           </div>
-
-          {/* <div className="rounded-2xl border bg-gradient-to-b from-zinc-50 to-white p-8 shadow-sm">
-            <div className="grid gap-6">
-              <div>
-                <p className="text-sm font-medium text-zinc-700">What you get</p>
-                <p className="mt-1 text-2xl font-semibold tracking-tight">A deployable asset, not a demo.</p>
-              </div>
-              <ul className="grid gap-3 text-sm text-zinc-700">
-                <li className="rounded-xl border bg-white p-4">Cloud Run-ready Docker build (multi-stage)</li>
-                <li className="rounded-xl border bg-white p-4">Lead capture API route + webhook integration</li>
-                <li className="rounded-xl border bg-white p-4">Performance-first, accessible UI patterns</li>
-              </ul>
-            </div>
-          </div> */}
         </div>
       </div>
     </section>
