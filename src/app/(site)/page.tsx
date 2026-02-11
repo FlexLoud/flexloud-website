@@ -1,7 +1,7 @@
 import { CTA } from "@/components/site/CTA";
 import { ContactForm } from "@/components/site/ContactForm";
 import { Features } from "@/components/site/Features";
-import { HeroV4 } from "@/components/site/Hero3";
+import { HeroV7 } from "@/components/site/HeroCaraousel";
 import { Pricing } from "@/components/site/Pricing";
 import { Services } from "@/components/site/Services";
 import { Testimonials } from "@/components/site/Testimonials";
@@ -17,11 +17,16 @@ export default function HomePage() {
 
 
         {/* Hero */}
-        <section className=" py-5 md:py-14" style={{ backgroundImage: "url('/images/banner.png')", backgroundPosition: '60% center' }}>
+        <section >
+          {/* style={{ backgroundImage: "url('/images/banner.png')", backgroundPosition: '60% center' }} */}
+
           {/* <Hero /> */}
           {/* <HeroAnimated /> */}
-          <HeroV4 />
+
           {/* <HeroV5 /> */}
+          {/* <HeroV4 /> */}
+          <HeroV7 />
+          {/* <HeroHalf /> */}
         </section>
 
         {/* Features */}

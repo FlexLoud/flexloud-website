@@ -183,7 +183,7 @@ export function Pricing() {
         {/* Header */}
         <div className="mb-8 md:mb-10 flex flex-col gap-4">
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <div className="max-w-2xl">
+            {/* <div className="max-w-2xl">
               <p className="text-sm font-medium text-zinc-900/70">Pricing</p>
               <h2 className="mt-2 text-3xl font-semibold tracking-tight text-zinc-900">
                 Simple plans. Flexible scope.
@@ -191,7 +191,7 @@ export function Pricing() {
               <p className="mt-2 text-zinc-600">
                 {active.subtitle}
               </p>
-            </div>
+            </div> */}
 
             <span className={`${pillBase} bg-white`}>
               <BadgeIndianRupee className="h-4 w-4" />

@@ -1,6 +1,8 @@
 import { Footer } from "@/components/site/Footer";
 import { Navbar } from "@/components/site/Navbar";
 import { Toaster } from "@/components/ui/toaster";
+import 'antd/dist/reset.css';
+
 import { env } from "@/lib/env";
 import type { Metadata } from "next";
 import '../../style/theme.css';
