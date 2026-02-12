@@ -1,19 +1,23 @@
 "use client";
 
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/components/ui/use-toast";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { notification } from "antd";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
 
 const FormSchema = z.object({
   name: z.string().min(2, "Name is too short").max(80),
   email: z.string().email("Invalid email"),
   company: z.string().max(120).optional(),
-  message: z.string().min(10, "Add more detail").max(2000)
+  message: z.string().min(10, "Add more detail").max(2000),
+  mobile: z
+    .string()
+    .regex(/^\d{10,12}$/, "Mobile must be 10 to 12 digits"),
 });
 
 type FormValues = z.infer<typeof FormSchema>;
@@ -23,7 +27,7 @@ export function ContactForm() {
 
   const form = useForm<FormValues>({
     resolver: zodResolver(FormSchema),
-    defaultValues: { name: "", email: "", company: "", message: "" }
+    defaultValues: { name: "", email: "", company: "", message: "", mobile: "" }
   });
 
   const onSubmit = async (values: FormValues) => {
@@ -35,12 +39,22 @@ export function ContactForm() {
 
     if (!res.ok) {
       const data = await res.json().catch(() => ({}));
-      toast({ title: "Submission failed", description: data?.error ?? "Try again." });
+      //toast({ title: "Submission failed", description: data?.error ?? "Try again." });
+      notification.error({
+        message: "Submission failed",
+        description: data?.error ?? "Try again.",
+        placement: "topRight"
+      })
       return;
     }
 
     form.reset();
-    toast({ title: "Received", description: "We’ll respond with next steps." });
+    //show notification antd
+    notification.success({
+      message: "Query Submitted",
+      description: "We’ll respond with next steps.",
+      placement: "topRight"
+    })
   };
 
   return (
@@ -50,6 +64,23 @@ export function ContactForm() {
         <Input id="name" placeholder="Your name" {...form.register("name")} />
         {form.formState.errors.name?.message && (
           <p className="text-xs text-red-600">{form.formState.errors.name.message}</p>
+        )}
+      </div>
+      {/* add mobile also */}
+      <div className="grid gap-2">
+        <Label htmlFor="mobile">Mobile</Label>
+        <Input
+          id="mobile"
+          type="tel"
+          inputMode="numeric"
+          placeholder="Your mobile number"
+          {...form.register("mobile")}
+          onInput={(e: any) => {
+            e.currentTarget.value = e.currentTarget.value.replace(/\D/g, "").slice(0, 12);
+          }}
+        />
+        {form.formState.errors.mobile?.message && (
+          <p className="text-xs text-red-600">{form.formState.errors.mobile.message}</p>
         )}
       </div>
 
@@ -74,7 +105,7 @@ export function ContactForm() {
         )}
       </div>
 
-      <Button type="submit">Send</Button>
+      <Button disabled={form.formState.isSubmitting} type="submit">{form.formState.isSubmitting ? "Sending..." : "Send"}</Button>
     </form>
   );
 }
