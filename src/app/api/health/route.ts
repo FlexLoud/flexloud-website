@@ -3,7 +3,7 @@ import { logger } from "@/lib/logger";
 import { getRequestId } from "@/lib/request";
 
 export async function GET() {
-  const requestId = getRequestId();
+  const requestId = await getRequestId();
   const start = Date.now();
 
   const payload = {
