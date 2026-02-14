@@ -17,7 +17,7 @@ export default function HomePage() {
 
 
         {/* Hero */}
-        <section >
+        <section id="home" style={{ maxHeight: `calc(100vh - 60px)`, overflow: "hidden" }} >
           {/* style={{ backgroundImage: "url('/images/banner.png')", backgroundPosition: '60% center' }} */}
 
           {/* <Hero /> */}

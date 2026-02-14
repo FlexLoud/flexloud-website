@@ -364,7 +364,8 @@ section {
   }
 
   .footer-mini-link {
-    @apply hover:text-white transition;
+    /* @apply hover:text-white transition; */
+    color: white;
   }
 }
 
