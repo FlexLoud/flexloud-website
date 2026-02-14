@@ -11,7 +11,7 @@ const EnvSchema = z.object({
     .default("Cloud • Data • CRM — engineered for outcomes"),
 
   // ✅ Add this
-  DATABASE_URL: z.string().url(),
+  DATABASE_URL: z.string().optional(),
 
   LOG_LEVEL: z
     .enum(["fatal", "error", "warn", "info", "debug", "trace", "silent"])
