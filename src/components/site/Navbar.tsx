@@ -7,6 +7,7 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
   const [stuck, setStuck] = useState(false);
   const active = useActiveSection();
+  console.log("rrrrrrrrrrrrrrr", active)
 
   const linkClass = (id: string) =>
     `nav-link ${active === id ? "nav-link-active" : ""}`;
